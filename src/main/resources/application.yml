@@ -5,10 +5,14 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/mytest
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
 
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
+
 

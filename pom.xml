@@ -76,6 +76,13 @@
 <!--                相当于compile，但是打包阶段做了exclude操作&ndash;&gt;-->
 <!--            <scope>provided</scope>-->
 <!--        </dependency>-->
+        <!--整合mongodb-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>
