@@ -56,6 +56,8 @@ public class MongoServiceImpl implements MongoService {
 
     @Override
     public List<Book> findLikes(String search) {
+        Query query=new Query();
+        query.addCriteria(Criteria.where("updateTime").lt(new Date()));
         return null;
     }
 
