@@ -1,22 +1,25 @@
 package com.sh.mybatisdemo.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * Created By Sunhu At 2020/5/25 10:12
  *
  * @author Sun
  */
-@Document
+//@Document
 @Data
-public class Address {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Address implements Serializable {
 
+    private static final long serialVersionUID = -1171080805273061155L;
     private String city;
     private String area;
 
-    public Address(String city, String area) {
-        this.city = city;
-        this.area = area;
-    }
+
 }
