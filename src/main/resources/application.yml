@@ -10,9 +10,9 @@ spring:
       uri: mongodb://127.0.0.1:27017/mytest
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
-
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
+    cache-enabled: true
 
 

@@ -42,10 +42,12 @@ class EmployeeServiceImplTest {
     }
 
     @Test
+    //@Transactional(rollbackFor = Throwable.class)
     void queryWithDeptById() {
-        Integer id= 1;
+
         EmployeeDto employee = employeeDao.queryWithDeptById(1);
-        System.out.println(employee);
+        EmployeeDto emp2=employeeDao.queryWithDeptById(1);
+        System.out.println(employee==emp2);
 
 
     }
