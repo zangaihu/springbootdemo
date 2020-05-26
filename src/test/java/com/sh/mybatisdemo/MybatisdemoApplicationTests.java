@@ -47,11 +47,11 @@ class MybatisdemoApplicationTests {
     @Test
     void testDownLoad() throws IOException {
         String fileId = "5ecb963e358df867c53ec782";
-
+        //查询需要下载的文件
         GridFSFile gridFSFile = gridFsTemplate.findOne(new Query(Criteria.where("_id").is(fileId)));
-
+        //打开下载流
         GridFSDownloadStream gridFSDownloadStream=gridFSBucket.openDownloadStream(gridFSFile.getObjectId());
-
+        //创建gridResource,获取流对象
         GridFsResource gridFsResource=new GridFsResource(gridFSFile,gridFSDownloadStream);
 
         InputStream inputStream = gridFsResource.getInputStream();
@@ -69,6 +69,14 @@ class MybatisdemoApplicationTests {
         }
         inputStream.close();
         fos.close();
+    }
+
+
+    @Test
+    void testDelete(){
+
+        gridFsTemplate.delete(new Query(Criteria.where("_id").is("5ecb963e358df867c53ec782")));
+
     }
 
 
